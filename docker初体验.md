@@ -86,6 +86,9 @@ sudo yum install -y docker-ce-<version> docker-ce-cli-<version>...
 
 
 >如果您不想在docker命令前加上sudo，请创建一个名为docker的Unix组并向其添加用户。当Docker守护程序启动时，它会创建一个可由该docker组成员访问的Unix套接字。
+
+1.创建docker用户组
+```sudo groupadd docker```
 ## 5.3 使用教程
 
 ## 5.4 卸载docker ce

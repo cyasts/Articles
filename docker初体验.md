@@ -40,7 +40,7 @@ sudo yum-config-manager --add-repo \
 
 > 可选：启用夜间或测试存储库。
 >
->这些存储库包含在docker.repo上面的文件中，但默认情况下处于禁用>>状态。您可以将它们与稳定存储库一起启用。以下命令启用夜间存储>>库。
+>这些存储库包含在docker.repo上面的文件中，但默认情况下处于禁用>状态。您可以将它们与稳定存储库一起启用。以下命令启用夜间存储>>库。
 >
 >$ sudo yum-config-manager --enable docker-ce-nightly
 要启用测试通道，请运行以下命令：
@@ -48,7 +48,11 @@ sudo yum-config-manager --add-repo \
 >$ sudo yum-config-manager --enable docker-ce-test
 您可以通过运行带有标志的命令来禁用每晚或测试存储库 。要重新启用它，请使用该标志。以下命令禁用夜间存储库。yum-config-manager--disable--enable
 >$ sudo yum-config-manager --disable docker-ce-nightly
-3.
+
+3.安装docker-ce
+```
+sudo yum install docker-ce docker-ce-cli containerd.io
+```
 ### 5.1.3 arch系
 ## 5.2 安装后的一些设置
 ## 5.3 使用教程

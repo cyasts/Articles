@@ -89,6 +89,9 @@ sudo yum install -y docker-ce-<version> docker-ce-cli-<version>...
 
 1.创建docker用户组
 ```sudo groupadd docker```
+2.将用户添加到docker用户组
+```sudo usermod -aG docker $username```
+$username需要修改成相应的用户名
 ## 5.3 使用教程
 
 ## 5.4 卸载docker ce

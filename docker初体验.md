@@ -71,7 +71,23 @@ sudo yum install -y docker-ce-<version> docker-ce-cli-<version>...
 完成安装。
 
 **安装完成之后，docker用户组已经被创建，但没有用户被添加到docker用户组**
-4.
+4.启动docker
+```sudo systemctl start docker```
+如果要开机启动执行
+```sudo systemctl enable docker```
 ### 5.1.3 arch系
-## 5.2 安装后的一些设置
+## 5.2 安装完成后
+1.测试是否正常安装了docker -ce
+执行指令
+```sudo docker run hello-world```
+如果会正确的输出一条消息，即安装正确。
+2.
 ## 5.3 使用教程
+
+## 5.4 卸载docker ce
+1.卸载docker包
+执行指令：
+```sudo yum remove docker-ce```
+2.机器上的图片，容器和其他配置文件不会自行删除。
+执行指令：
+```sudo rm -rf /var/lib/docker```

@@ -81,7 +81,10 @@ sudo yum install -y docker-ce-<version> docker-ce-cli-<version>...
 执行指令
 ```sudo docker run hello-world```
 如果会正确的输出一条消息，即安装正确。
-2.
+2.想以非root用户管理docker
+>Docker守护程序绑定到Unix套接字而不是TCP端口。默认情况下，Unix套接字由用户拥有root，其他用户只能使用它sudo。Docker守护程序始终以root用户身份运行。
+>
+>如果您不想在docker命令前加上sudo，请创建一个名为的Unix组docker并向其添加用户。当Docker守护程序启动时，它会创建一个可由该docker组成员访问的Unix套接字。
 ## 5.3 使用教程
 
 ## 5.4 卸载docker ce

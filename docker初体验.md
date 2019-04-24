@@ -53,6 +53,25 @@ sudo yum-config-manager --add-repo \
 ```
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
+如果提示接受秘钥，点接受即可。
+
+如果要安装特定版本的docker-ce，先在repo中列出可用版本，然后选择安装。
+```
+$ yum list docker-ce --showduplicates | sort -r
+
+docker-ce.x86_64  3:18.09.1-3.el7                     docker-ce-stable
+docker-ce.x86_64  3:18.09.0-3.el7                     docker-ce-stable
+docker-ce.x86_64  18.06.1.ce-3.el7                    docker-ce-stable
+docker-ce.x86_64  18.06.0.ce-3.el7                    docker-ce-stable
+```
+然后使用
+```
+sudo yum install -y docker-ce-<version> docker-ce-cli-<version>...
+```
+完成安装。
+
+**安装完成之后，docker用户组已经被创建，但没有用户被添加到docker用户组**
+4.
 ### 5.1.3 arch系
 ## 5.2 安装后的一些设置
 ## 5.3 使用教程

@@ -97,6 +97,12 @@ $username需要修改成相应的用户名
 执行
 ```docker run hello-world```
 ## 5.3 使用教程
+1.查看docker版本
+```docker --version```
+2.查看docker信息
+```docker info```
+或者
+```docker version```
 
 ## 5.4 卸载docker ce
 1.卸载docker包

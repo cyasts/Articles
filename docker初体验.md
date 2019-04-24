@@ -96,6 +96,14 @@ $username需要修改成相应的用户名
 4.验证是否可以运行docker
 执行
 ```docker run hello-world```
+
+3.设置docker开机启动
+见前面
+4.配置帧听ip地址和端口
+5.启用ipv6
+6.ip转发问题
+7.为docker指定dns服务器
+8.允许通过防火墙访问远程api
 ## 5.3 使用教程
 1.查看docker版本
 ```docker --version```
@@ -103,8 +111,11 @@ $username需要修改成相应的用户名
 ```docker info```
 或者
 ```docker version```
+3.列出计算机中的docker镜像
+```docker image ls```
 
-## 5.4 卸载docker ce
+## 5.4 配置教程
+## 5.5 卸载docker ce
 1.卸载docker包
 执行指令：
 ```sudo yum remove docker-ce```

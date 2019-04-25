@@ -209,6 +209,7 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 "dns":["your_dns_address","8.8.8.8"]
 }
 ```
+然后重启docker守护进程
 ## 5.5 卸载docker ce
 ### 1.卸载docker包
 执行指令：

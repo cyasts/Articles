@@ -113,6 +113,16 @@ $username需要修改成相应的用户名
 ```docker version```
 3.列出计算机中的docker镜像
 ```docker image ls```
+4.构建应用程序
+在Dockerfile所在目录内，创建好必要的文件配置，运行
+```
+docker build --tag=$imagename
+```
+可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
+```docker build --tag=$imagename:v0.0.1```
+5.运行应用程序
+```docker run -p 4000:80 $imagename```
+这里
 
 ## 5.4 配置教程
 >Dockerfile定义容器内环境中发生的事情。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，因此您需要将端口映射到外部世界，并具体说明要“复制”哪些文件到那个环境。但是，在执行此操作之后，您可以预期Dockerfile在此处定义的应用程序的构建 在其运行的任何位置都完全相同。
@@ -140,6 +150,43 @@ ENV NAME World
 # Run app.py when the container launches
 CMD ["python", "app.py"]
 ```
+这个dockerfile里面要求几个没有创建的文件，app.py和requirements.txt
+
+接下来继续创建。
+创建requirements.txt
+```
+Flask
+Redis
+```
+创建app.py
+```
+from flask import Flask
+from redis import Redis, RedisError
+import os
+import socket
+
+# Connect to Redis
+redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    try:
+        visits = redis.incr("counter")
+    except RedisError:
+        visits = "<i>cannot connect to Redis, counter disabled</i>"
+
+    html = "<h3>Hello {name}!</h3>" \
+           "<b>Hostname:</b> {hostname}<br/>" \
+           "<b>Visits:</b> {visits}"
+    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), visits=visits)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
+```
+pip install -r requirements.txt为python安装flask和redis，应用程序打印变量NAME。
+可以看到我们并没有安装python和flask，redis库，
 ## 5.5 卸载docker ce
 1.卸载docker包
 执行指令：

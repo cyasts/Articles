@@ -97,23 +97,23 @@ $username需要修改成相应的用户名
 执行
 ```docker run hello-world```
 
-3.设置docker开机启动
+### 3.设置docker开机启动
 见前面
-4.配置帧听ip地址和端口
-5.启用ipv6
-6.ip转发问题
-7.为docker指定dns服务器
-8.允许通过防火墙访问远程api
+### 4.配置帧听ip地址和端口
+### 5.启用ipv6
+### 6.ip转发问题
+### 7.为docker指定dns服务器
+### 8.允许通过防火墙访问远程api
 ## 5.3 使用教程
-1.查看docker版本
+### 1.查看docker版本
 ```docker --version```
-2.查看docker信息
+### 2.查看docker信息
 ```docker info```
 或者
 ```docker version```
-3.列出计算机中的docker镜像
+### 3.列出计算机中的docker镜像
 ```docker image ls```
-4.构建应用程序
+### 4.构建应用程序
 在Dockerfile所在目录内，创建好必要的文件配置，运行
 ```
 docker build --tag=$imagename .
@@ -121,10 +121,10 @@ docker build --tag=$imagename .
 后面的`.`可以指定从哪个目录构建docker镜像
 可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
 ```docker build --tag=$imagename:v0.0.1 .```
-5.运行应用程序
+### 5.运行应用程序
 ```docker run -p 4000:80 $imagename```
 这里前面的端口指定的是外部计算机的端口，后面的端口是容器内开放的端口，就是说把容器内部的80端口暴露到外部计算机的4000端口
-6.搜索远程仓库中的镜像
+### 6.搜索远程仓库中的镜像
 ```docker search $imagename```
 
 ## 5.4 配置教程

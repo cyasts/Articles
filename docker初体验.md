@@ -118,7 +118,7 @@ $username需要修改成相应的用户名
 ```
 docker build --tag=$imagename .
 ```
-后面的`.`可以制定目录
+后面的`.`可以指定从哪个目录构建docker镜像
 可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
 ```docker build --tag=$imagename:v0.0.1```
 5.运行应用程序

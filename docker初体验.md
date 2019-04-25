@@ -149,6 +149,10 @@ docker -d -p ip:port $imagename
 例如```docker tag friendlyhello cyasts/get-started:part1```。注意这个时候还是在本地的，还没有推送到远程仓库，可通过```docker image ls```来查看本地的所有镜像。
 然后推送到远程仓库。
 执行```docker push username/repository:tag```即可推送到远程的仓库。**注意：推送的镜像会是公开的**
+#### 4).从远程仓库拉取镜像
+镜像推送到远程仓库后，就可以在任何关联了远程仓库的计算机上执行应用程序了。
+```docker run -p 4000:80 cyasts/repository:tag```
+如果本地镜像不可用，docker会从远程仓库中拉取到本地。这样就不需要安装python，以及以其他的依赖项了。
 ## 5.4 配置教程
 >Dockerfile定义容器内环境中发生的事情。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，因此您需要将端口映射到外部世界，并具体说明要“复制”哪些文件到那个环境。但是，在执行此操作之后，您可以预期Dockerfile在此处定义的应用程序的构建 在其运行的任何位置都完全相同。
 

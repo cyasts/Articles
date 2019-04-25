@@ -120,7 +120,7 @@ docker build --tag=$imagename .
 ```
 后面的`.`可以指定从哪个目录构建docker镜像
 可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
-```docker build --tag=$imagename:v0.0.1```
+```docker build --tag=$imagename:v0.0.1 .```
 5.运行应用程序
 ```docker run -p 4000:80 $imagename```
 这里前面的端口指定的是外部计算机的端口，后面的端口是容器内开放的端口，就是说把容器内部的80端口暴露到外部计算机的4000端口

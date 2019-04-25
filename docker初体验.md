@@ -193,6 +193,13 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 可以看到我们并没有安装python和flask，redis库。
 
 ### 2.更改docker的源
+修改/etc/docker/daemon.json
+在文件中加入
+```
+{
+"registry-mirrors":["https://docker.mirrors.ustc.edu.cn"]
+}
+```
 ## 5.5 卸载docker ce
 ### 1.卸载docker包
 执行指令：

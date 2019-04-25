@@ -194,9 +194,9 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 
 ### 2.更改docker的源
 ## 5.5 卸载docker ce
-1.卸载docker包
+### 1.卸载docker包
 执行指令：
 ```sudo yum remove docker-ce```
-2.机器上的图片，容器和其他配置文件不会自行删除。
+### 2.机器上的图片，容器和其他配置文件不会自行删除。
 执行指令：
 ```sudo rm -rf /var/lib/docker```

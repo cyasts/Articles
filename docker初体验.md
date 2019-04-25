@@ -22,7 +22,7 @@ sudo yum remove docker docker-client \
 ```
 /var/lib/docker 保留docker的图像，容器和网络所在的内容
 #### 2.使用存储库安装
-#####　1.安装依赖的包
+##### 1.安装依赖的包
 ```
 sudo yum install -y yum-utils \
 device-mapper-persistent-data \

@@ -223,8 +223,30 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 ENV http_proxy host:port
 ENV https_proxy host:port
 ```
-
-### 2./etc/docker/daemon.json
+### 2.docker-compose.yml
+这个文件定义docker容易如何在生产中表现
+```
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: username/repo:tag
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "4000:80"
+    networks:
+      - webnet
+networks:
+  webnet:
+```
+### 3./etc/docker/daemon.json
 #### 1).修改国内镜像源
 docker的默认官方源，访问速度很慢，可以通过修改为国内源来提升速度。
 在文件中加入

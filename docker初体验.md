@@ -116,8 +116,9 @@ $username需要修改成相应的用户名
 4.构建应用程序
 在Dockerfile所在目录内，创建好必要的文件配置，运行
 ```
-docker build --tag=$imagename
+docker build --tag=$imagename .
 ```
+后面的`.`可以制定目录
 可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
 ```docker build --tag=$imagename:v0.0.1```
 5.运行应用程序

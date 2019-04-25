@@ -13,7 +13,7 @@ grammar_cjkRuby: true
 
 ### 5.1.1 debian系
 ### 5.1.2 redhat系
-#### **1. 卸载旧版的docker**
+#### 1. 卸载旧版的docker
 ```
 sudo yum remove docker docker-client \
 	docker-client-latest docker-common \
@@ -21,7 +21,7 @@ sudo yum remove docker docker-client \
 	docker-logrotate docker-engine
 ```
 /var/lib/docker 保留docker的图像，容器和网络所在的内容
-#### **2.使用存储库安装**
+#### 2.使用存储库安装
 #####　1.安装依赖的包
 ```
 sudo yum install -y yum-utils \

@@ -131,7 +131,7 @@ docker build --tag=$imagename .
 >Dockerfile定义容器内环境中发生的事情。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，因此您需要将端口映射到外部世界，并具体说明要“复制”哪些文件到那个环境。但是，在执行此操作之后，您可以预期Dockerfile在此处定义的应用程序的构建 在其运行的任何位置都完全相同。
 
 ### 1.Dockerfile
-#### 1)一个简单的例子
+#### 1.)一个简单的例子
 ```
 # Use an official Python runtime as a parent image
 FROM python:2.7-slim

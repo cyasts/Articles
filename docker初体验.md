@@ -226,6 +226,7 @@ ENV https_proxy host:port
 
 ### 2./etc/docker/daemon.json
 #### 1).修改国内镜像源
+docker的默认官方源，访问速度很慢，可以通过修改为国内源来提升速度。
 在文件中加入
 ```
 {

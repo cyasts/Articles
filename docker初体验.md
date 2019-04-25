@@ -193,7 +193,7 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 可以看到我们并没有安装python和flask，redis库。
 
 ### 2./etc/docker/daemon.json
-修改/etc/docker/daemon.json
+#### 1.修改国内镜像源
 在文件中加入
 ```
 {

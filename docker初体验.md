@@ -192,7 +192,7 @@ if __name__ == "__main__":
 pip install -r requirements.txt为python安装flask和redis，应用程序打印变量NAME。
 可以看到我们并没有安装python和flask，redis库。
 
-### 2.更改docker的源
+### 2./etc/docker/daemon.json
 修改/etc/docker/daemon.json
 在文件中加入
 ```

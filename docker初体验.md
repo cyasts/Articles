@@ -130,6 +130,8 @@ docker -d -p ip:port $imagename
 ```
 ### 7.查看本地的docker容器
 ```docker container ls```
+### 8.停止正在运行的docker容器
+```docker container stop $containerID```
 ### 7.搜索远程仓库中的镜像
 ```docker search $imagename```
 ### 8.

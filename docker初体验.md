@@ -124,11 +124,14 @@ docker build --tag=$imagename .
 5.运行应用程序
 ```docker run -p 4000:80 $imagename```
 这里前面的端口指定的是外部计算机的端口，后面的端口是容器内开放的端口，就是说把容器内部的80端口暴露到外部计算机的4000端口
+6.搜索远程仓库中的镜像
+```docker search $imagename```
 
 ## 5.4 配置教程
 >Dockerfile定义容器内环境中发生的事情。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，因此您需要将端口映射到外部世界，并具体说明要“复制”哪些文件到那个环境。但是，在执行此操作之后，您可以预期Dockerfile在此处定义的应用程序的构建 在其运行的任何位置都完全相同。
 
-1.简单的例子
+1.Dockerfile
+一个简单的例子
 ```
 # Use an official Python runtime as a parent image
 FROM python:2.7-slim

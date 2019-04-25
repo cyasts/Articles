@@ -13,7 +13,7 @@ grammar_cjkRuby: true
 
 ### 5.1.1 debian系
 ### 5.1.2 redhat系
-**1. 卸载旧版的docker**
+#### **1. 卸载旧版的docker**
 ```
 sudo yum remove docker docker-client \
 	docker-client-latest docker-common \

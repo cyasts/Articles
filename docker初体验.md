@@ -105,15 +105,16 @@ $username需要修改成相应的用户名
 ### 7.为docker指定dns服务器
 ### 8.允许通过防火墙访问远程api
 ## 5.3 使用教程
-### 1.查看docker版本
+### 1.基本操作
+#### 1).查看docker版本
 ```docker --version```
-### 2.查看docker信息
+#### 2).查看docker信息
 ```docker info```
 或者
 ```docker version```
-### 3.列出计算机中的docker镜像
+#### 3).列出计算机中的docker镜像
 ```docker image ls```
-### 4.构建应用程序
+#### 4).构建应用程序
 在Dockerfile所在目录内，创建好必要的文件配置，运行
 ```
 docker build --tag=$imagename .
@@ -121,20 +122,33 @@ docker build --tag=$imagename .
 后面的`.`可以指定从哪个目录构建docker镜像
 可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
 ```docker build --tag=$imagename:v0.0.1 .```
-### 5.运行应用程序
+#### 5).运行应用程序
 ```docker run -p ip:port $imagename```
 这里前面的端口指定的是外部计算机的端口，后面的端口是容器内开放的端口，就是说把容器内部的80端口暴露到外部计算机的4000端口
-### 6.以后台模式运行应用程序
+#### 6).以后台模式运行应用程序
 ```
 docker -d -p ip:port $imagename
 ```
-### 7.查看本地的docker容器
+#### 7).查看本地的docker容器
 ```docker container ls```
-### 8.停止正在运行的docker容器
+#### 8).停止正在运行的docker容器
 ```docker container stop $containerID```
-### 7.搜索远程仓库中的镜像
+#### 9).搜索远程仓库中的镜像
 ```docker search $imagename```
-### 8.
+#### 10).
+### 2.链接远程仓库
+#### 1).注册docker账号
+类似于github的远程仓库，需要推送到私人的仓库，所以需要在hub.docker.com注册一个账号，记住登录名和密码。
+#### 2).在本地登录远程仓库
+运行```docker login```然后输入账号和密码进行登录。
+#### 3).将镜像推送到远程仓库
+>不同于github，github是在本地初始化一个仓库，然后对每次的提交和更改对应一个标签，然后每次pull到远程仓库时，必须进入对应的远程仓库的目录，执行push remote ...，而docker是通过对镜像进行标记为username/repository:tag，然后直接针对有这种格式的标记进行推送。
+
+首先需要对一个镜像进行标记，制定docker资源库的用户名和仓库名。
+执行```docker tag $imagename username/repository:tag```对镜像进行标记。
+然后推送到远程仓库。
+例如来
+执行```docker```
 ## 5.4 配置教程
 >Dockerfile定义容器内环境中发生的事情。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，因此您需要将端口映射到外部世界，并具体说明要“复制”哪些文件到那个环境。但是，在执行此操作之后，您可以预期Dockerfile在此处定义的应用程序的构建 在其运行的任何位置都完全相同。
 

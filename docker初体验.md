@@ -200,6 +200,8 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 "registry-mirrors":["https://docker.mirrors.ustc.edu.cn"]
 }
 ```
+然后重启docker 守护进程。执行
+```sudo systemctl restart docker```
 ## 5.5 卸载docker ce
 ### 1.卸载docker包
 执行指令：

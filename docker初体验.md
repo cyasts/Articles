@@ -31,7 +31,7 @@ lvm2
 >yum-utils提供了yum-config-manager
 >devide-mapper-persistent-date和lvm2需要devicemapper存储驱动程序
 
-2.增加docker安装源
+##### 2.增加docker安装源
 ```
 sudo yum-config-manager --add-repo \
   http://mirrors.ustc.edu.cn/dockerce/linux/centos/docker-ce.repo

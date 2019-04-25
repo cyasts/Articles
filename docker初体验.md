@@ -77,7 +77,7 @@ sudo yum install -y docker-ce-<version> docker-ce-cli-<version>...
 ```sudo systemctl enable docker```
 ### 5.1.3 arch系
 ## 5.2 安装完成后
-1.测试是否正常安装了docker -ce
+### 1.测试是否正常安装了docker -ce
 执行指令
 ```sudo docker run hello-world```
 如果会正确的输出一条消息，即安装正确。

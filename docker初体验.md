@@ -122,11 +122,17 @@ docker build --tag=$imagename .
 可选的：默认生成的镜像的标签为latest，如果要制定标签，使用
 ```docker build --tag=$imagename:v0.0.1 .```
 ### 5.运行应用程序
-```docker run -p 4000:80 $imagename```
+```docker run -p ip:port $imagename```
 这里前面的端口指定的是外部计算机的端口，后面的端口是容器内开放的端口，就是说把容器内部的80端口暴露到外部计算机的4000端口
-### 6.搜索远程仓库中的镜像
+### 6.以后台模式运行应用程序
+```
+docker -d -p ip:port $imagename
+```
+### 7.查看本地的docker容器
+```docker container ls```
+### 7.搜索远程仓库中的镜像
 ```docker search $imagename```
-### 7.
+### 8.
 ## 5.4 配置教程
 >Dockerfile定义容器内环境中发生的事情。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，因此您需要将端口映射到外部世界，并具体说明要“复制”哪些文件到那个环境。但是，在执行此操作之后，您可以预期Dockerfile在此处定义的应用程序的构建 在其运行的任何位置都完全相同。
 
@@ -192,6 +198,11 @@ if __name__ == "__main__":
 pip install -r requirements.txt为python安装flask和redis，应用程序打印变量NAME。
 可以看到我们并没有安装python和flask，redis库。
 #### 2).设置代理服务器
+如果通过路由器或者代理服务器链接进入网络，而主机位于这些网络的后面，则代理服务器会阻止这些链接。可以通过指定代理服务器的ip和端口来解决。
+```
+ENV http_proxy host:port
+ENV https_proxy host:port
+```
 
 ### 2./etc/docker/daemon.json
 #### 1).修改国内镜像源

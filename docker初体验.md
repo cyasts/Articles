@@ -202,6 +202,13 @@ pip install -r requirements.txt为python安装flask和redis，应用程序打印
 ```
 然后重启docker 守护进程。执行
 ```sudo systemctl restart docker```
+#### 2.设置docker容器的dns地址
+在文件中加入
+```
+{
+"dns":["your_dns_address","8.8.8.8"]
+}
+```
 ## 5.5 卸载docker ce
 ### 1.卸载docker包
 执行指令：

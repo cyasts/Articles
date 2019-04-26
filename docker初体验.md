@@ -139,6 +139,8 @@ docker -d -p ip:port $imagename
 ```docker swarm init```
 #### 11).部署stack
 ```docker stack deploy -c **.yml applicationname```
+#### 12).查看docker stack的镜像
+```docker stack ps applicationname```
 ### 2.链接远程仓库
 #### 1).注册docker账号
 类似于github的远程仓库，需要推送到私人的仓库，所以需要在hub.docker.com注册一个账号，记住登录名和密码。

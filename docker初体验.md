@@ -225,6 +225,7 @@ ENV https_proxy host:port
 ```
 ### 2.docker-compose.yml
 这个文件定义docker容易如何在生产中表现
+注意这个文件中每个key: value对中，冒号后面必须有一个空格
 ```
 version: "3"
 services:

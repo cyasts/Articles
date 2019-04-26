@@ -260,6 +260,9 @@ networks:
 >指示 web 容器通过负载均衡的网络 webnet 共享端口 80。（在内部，>容器自身将在临时端口发布到 web 的端口 80。）
 >
 >使用默认设置定义 webnet 网络（此为负载均衡的 overlay 网络）。
+
+然后运行```docker swarm init``` ，这个命令是干啥的暂不清楚
+然后执行```docker stack deploy -c **.yml applicationName```
 ### 3./etc/docker/daemon.json
 #### 1).修改国内镜像源
 docker的默认官方源，访问速度很慢，可以通过修改为国内源来提升速度。

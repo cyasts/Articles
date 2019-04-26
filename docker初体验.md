@@ -262,7 +262,7 @@ networks:
 >使用默认设置定义 webnet 网络（此为负载均衡的 overlay 网络）。
 
 然后运行```docker swarm init``` ，这个命令是干啥的暂不清楚
-然后执行```docker stack deploy -c **.yml applicationName```就可以部署成功了
+然后执行```docker stack deploy -c **.yml applicationName```就可以部署成功了。
 
 ### 3./etc/docker/daemon.json
 #### 1).修改国内镜像源
